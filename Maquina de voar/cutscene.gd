@@ -20,5 +20,6 @@ func _input(event):
 
 func _on_Timer_timeout():
 	Sfx.stop_all()
+	G.time = 0;
 	get_tree().change_scene("res://main.tscn")
 	pass # replace with function body

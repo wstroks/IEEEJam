@@ -6,7 +6,7 @@ extends Node2D
 
 var Cloud = load("res://cloud.tscn")
 var cloudPool = Array()
-var MAX_CLOUDS = 200
+var MAX_CLOUDS = 150
 
 var player_position = Vector2(0,0)
 

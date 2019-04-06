@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
-[ext_resource path="res://fonts/main-text.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://plane.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/pixel.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://fonts/main-text.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://plane.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -50,10 +51,9 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 19.0
 margin/top = 8.0
-margin/right = 64.0
-margin/bottom = 33.0
+margin/right = 151.0
+margin/bottom = 46.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Pontos"
 percent_visible = 1.0
@@ -66,13 +66,12 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 79.0
-margin/top = 1.0
-margin/right = 119.0
-margin/bottom = 26.0
+margin/left = 138.0
+margin/top = 0.0
+margin/right = 178.0
+margin/bottom = 25.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.843137, 0.482353, 0.729412, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0625, 0.0625, 0.0625, 1 )
 custom_constants/shadow_as_outline = 1
 text = "0px"
 percent_visible = 1.0
@@ -110,7 +109,7 @@ margin/left = 48.0
 margin/top = 37.0
 margin/right = -47.0
 margin/bottom = 12.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Continue?"
 align = 1
 percent_visible = 1.0
@@ -127,7 +126,7 @@ margin/left = 30.0
 margin/top = 53.0
 margin/right = 88.0
 margin/bottom = 84.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -144,7 +143,7 @@ margin/left = 110.0
 margin/top = 53.0
 margin/right = 168.0
 margin/bottom = 84.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -157,12 +156,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 297.0
-margin/top = 8.0
+margin/left = 277.0
+margin/top = 9.0
 margin/right = 387.0
-margin/bottom = 33.0
+margin/bottom = 34.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Tempo"
 percent_visible = 1.0
@@ -180,8 +178,7 @@ margin/top = 9.0
 margin/right = 437.0
 margin/bottom = 34.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.843137, 0.482353, 0.729412, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "0px"
 percent_visible = 1.0
@@ -208,12 +205,11 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="player" parent="." instance=ExtResource( 3 )]
+[node name="player" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 335, 168 )
 MAX_FUEL = 20
 fuel = 0
-be_quiet = false
 
 [node name="instructions" type="Label" parent="."]
 
@@ -227,7 +223,7 @@ margin/left = 231.0
 margin/top = 101.0
 margin/right = 439.0
 margin/bottom = 126.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 text = "Pressione Espaço para voar!"
