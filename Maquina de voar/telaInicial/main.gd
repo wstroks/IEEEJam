@@ -15,6 +15,7 @@ func _notification(what):
         get_tree().quit() # default behavior
 func _on_jogar_pressed():
 	audio_player.play("Click")
+	
 	get_tree().change_scene("res://telaInicial/introducao/apresenta1.tscn")
 	pass # replace with function body
 

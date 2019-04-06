@@ -33,7 +33,7 @@ func _input(event):
 				if(page==4):
 					get_parent().get_node("ParallaxBackground/ParallaxLayer/TextureFrame").set_texture(load("res://telaInicial/sprites/5-boyzinho.png"))
 				if(page==5):
-					get_tree().change_scene("res://main.tscn")
+					get_tree().change_scene("res://museu/apresenta1.tscn")
 				
 				set_bbcode(dialogo[page])
 				set_visible_characters(0)
