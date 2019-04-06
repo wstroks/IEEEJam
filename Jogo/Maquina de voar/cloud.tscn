@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://cloud.gd" type="Script" id=1]
+[ext_resource path="res://clouds/cloud-01.png" type="Texture" id=2]
+[ext_resource path="res://clouds/cloud-02.png" type="Texture" id=3]
+[ext_resource path="res://clouds/cloud-03.png" type="Texture" id=4]
+[ext_resource path="res://clouds/cloud-04.png" type="Texture" id=5]
+[ext_resource path="res://clouds/cloud-05.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ null ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ],
+"loop": false,
+"name": "wake",
+"speed": 5.0
+}, {
+"frames": [ null, null, null, null, null ],
+"loop": false,
+"name": "sleep",
+"speed": 3.0
+} ]
+
+[node name="cloud" type="KinematicBody2D"]
+
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="cloud1" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="face" type="AnimatedSprite" parent="cloud1"]
+
+transform/pos = Vector2( -47, 14 )
+frames = SubResource( 1 )
+animation = "sleep"
+frame = 4
+playing = true
+
+[node name="cloud2" type="Sprite" parent="."]
+
+visibility/visible = false
+texture = ExtResource( 3 )
+
+[node name="cloud3" type="Sprite" parent="."]
+
+visibility/visible = false
+texture = ExtResource( 4 )
+
+[node name="cloud4" type="Sprite" parent="."]
+
+visibility/visible = false
+texture = ExtResource( 5 )
+
+[node name="cloud5" type="Sprite" parent="."]
+
+visibility/visible = false
+texture = ExtResource( 6 )
+
+[connection signal="finished" from="cloud1/face" to="." method="change_animation"]
+
+
