@@ -10,6 +10,11 @@
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
+"frames": [ null ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+}, {
 "frames": [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ],
 "loop": false,
 "name": "wake",
@@ -19,11 +24,6 @@ animations = [ {
 "loop": false,
 "name": "sleep",
 "speed": 3.0
-}, {
-"frames": [ null ],
-"loop": false,
-"name": "default",
-"speed": 5.0
 } ]
 
 [node name="cloud" type="KinematicBody2D"]

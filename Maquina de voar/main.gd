@@ -6,11 +6,11 @@ extends Node2D
 
 var Cloud = load("res://cloud.tscn")
 var cloudPool = Array()
-var MAX_CLOUDS = 150
+var MAX_CLOUDS = 500
 
 var Gas = load("res://gas.tscn")
 var gasPool = Array()
-var MAX_GAS = 200
+var MAX_GAS = 100
 
 var elapsed = 0
 
@@ -18,7 +18,6 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_process(true)
-	
 	
 	set_process_input(true)
 	for i in range(1,MAX_CLOUDS):

@@ -10,12 +10,12 @@
 [ext_resource path="res://plane/propeller-02.png" type="Texture" id=8]
 [ext_resource path="res://plane/smoke.png" type="Texture" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
@@ -24,7 +24,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
@@ -36,8 +36,8 @@ animations = [ {
 [node name="Player" type="KinematicBody2D"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 4.05636, 0, 0, 2.47507, -4.73727, 2.35046 )
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 2.50214, 0, 0, 1.52673, 0.267814, -0.910659 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -50,26 +50,23 @@ FUEL_CONSUMPTION_RATE_PER_SECOND = 3.0
 FUEL_REFILL = 10
 MAX_FUEL = 100
 fuel = 100
-be_quiet = false
 
 [node name="body" type="AnimatedSprite" parent="."]
 
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
 
 [node name="propeller" type="AnimatedSprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 21, -2 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "default"
 playing = true
 
 [node name="tailSmokeParticles" type="Particles2D" parent="."]
 
-transform/pos = Vector2( 0, 0.540359 )
 z/z = -1
 config/amount = 200
 config/lifetime = 4.0
@@ -96,9 +93,9 @@ params/anim_initial_pos = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -4.73727, 2.35046 )
-transform/scale = Vector2( 4.05636, 2.47507 )
-shape = SubResource( 1 )
+transform/pos = Vector2( 0.267814, -0.910659 )
+transform/scale = Vector2( 2.50214, 1.52673 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 

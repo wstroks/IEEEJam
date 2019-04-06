@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://assets/bg.tex" type="Texture" id=1]
+[ext_resource path="res://scenes/Circles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/teste.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=5]
+[ext_resource path="res://scenes/ColorSwitcher.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Main" type="Node2D"]
+
+transform/pos = Vector2( 510.317, 299.357 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+transform/pos = Vector2( 510.317, 299.357 )
+motion/scale = Vector2( 1, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 2048, 1024 )
+
+[node name="TextureFrame" type="TextureFrame" parent="ParallaxBackground/ParallaxLayer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -510.0
+margin/top = -1369.0
+margin/right = 2562.0
+margin/bottom = 455.0
+texture = ExtResource( 1 )
+modulate = Color( 0.867188, 0.785889, 0.785889, 1 )
+stretch_mode = 0
+
+[node name="Circles" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1.68338, -107.357 )
+
+[node name="Sprite" type="Sprite" parent="Circles"]
+
+transform/pos = Vector2( 1.24564, 4.43973 )
+transform/scale = Vector2( 0.646333, 0.683663 )
+texture = ExtResource( 3 )
+
+[node name="Circles1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1.68338, -811.357 )
+
+[node name="Circles2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1.68338, -811.357 )
+transform/scale = Vector2( 0.7, 0.7 )
+rot_speed = 120
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1.68338, 112.643 )
+script/script = ExtResource( 5 )
+jump_force = 500
+extra_gravity = 500
+
+[node name="ColorSwitcher" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1.68338, -491.357 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( -2.69774, 207.903 )
+transform/scale = Vector2( 15.8901, 0.471782 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 3.18561, 0, 0, 2.11962, 0.35108, -1.91394 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+
+transform/pos = Vector2( 0.35108, -1.91394 )
+transform/scale = Vector2( 3.18561, 2.11962 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Player" to="Player" method="_on_Collision"]
+
+
