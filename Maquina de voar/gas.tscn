@@ -1,34 +1,15 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://gas.gd" type="Script" id=1]
-[ext_resource path="res://gas/gas-01.png" type="Texture" id=2]
-[ext_resource path="res://gas/gas-02.png" type="Texture" id=3]
-[ext_resource path="res://gas/gas-03.png" type="Texture" id=4]
-[ext_resource path="res://gas/happy-01.png" type="Texture" id=5]
-[ext_resource path="res://gas/happy-02.png" type="Texture" id=6]
-[ext_resource path="res://gas/happy-03.png" type="Texture" id=7]
-[ext_resource path="res://fonts/main-text.fnt" type="BitmapFont" id=8]
+[ext_resource path="res://fonts/main-text.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://gas/coin.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SpriteFrames" id=2]
-
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "happy",
-"speed": 5.0
-} ]
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 length = 1.0
 loop = true
@@ -44,7 +25,7 @@ tracks/0/keys = {
 "values": [ -15.0, 15.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource/name = "tutorial"
 length = 2.0
@@ -93,20 +74,12 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-
-transform/pos = Vector2( -1.18598, 20.8864 )
-frames = SubResource( 2 )
-animation = "default"
-frame = 2
-playing = true
-
 [node name="wobbleAnimation" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/default = SubResource( 3 )
+anims/default = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -117,7 +90,7 @@ autoplay = "default"
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/tutorial = SubResource( 4 )
+anims/tutorial = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -147,7 +120,7 @@ margin/left = -43.0
 margin/top = -61.0
 margin/right = 44.0
 margin/bottom = -15.0
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -4
 custom_constants/shadow_as_outline = 1
@@ -184,6 +157,10 @@ params/final_size = 1.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 3 )
 
 [connection signal="body_enter" from="Area2D" to="." method="collision_detected"]
 

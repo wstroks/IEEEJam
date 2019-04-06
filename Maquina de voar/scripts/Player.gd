@@ -13,7 +13,7 @@ var Yellow = Color(0.964706,0.87451,0.054902,1)
 var jump_action = input_states.new("jump_action")
 
 var currentColor = ""
-
+var cont = 0
 onready var PlayerSprite = get_node("Sprite")
 onready var Player = get_node(".")
 
@@ -28,6 +28,7 @@ func _fixed_process(delta):
 		Player.set_mode(2)
 		set_axis_velocity(Vector2(0, -jump_force))
 		
+
 func setRandomColor():
 	randomize()
 	var index = randi() % 4
@@ -45,13 +46,21 @@ func setRandomColor():
 		currentColor = "Purple"
 		PlayerSprite.set_modulate(Purple)
 
+func gameOver():
+	
+	get_parent().get_node("Panel/gameOver").show()
 func _on_Collision( collider ):
 	if collider.get("Tag") == "ColorSwitcher":
+		
 		setRandomColor()
-		collider.queue_free()
+		
 	
 	if collider.get("Tag") == currentColor:
+		
 		pass
+		
+		
+			
 	elif collider.get("Tag") != currentColor and collider.get("Tag") != "ColorSwitcher":
 		Die()
 

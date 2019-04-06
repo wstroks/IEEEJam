@@ -190,7 +190,7 @@ points = Vector2Array( -8.29755, 2.48843, -3.88422, 2.2729, -4.79284, 3.99712 )
 [node name="Circles" type="Node2D"]
 
 script/script = ExtResource( 1 )
-rot_speed = 75
+rot_speed = 40
 
 [node name="Cyan" type="RigidBody2D" parent="."]
 

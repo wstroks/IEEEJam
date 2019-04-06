@@ -62,7 +62,7 @@ func update_fuel_handler(fuel):
 		return
 	
 	
-	if fuel == 20:
+	if fuel == 10:
 		gameover()
 	
 

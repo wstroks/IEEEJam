@@ -31,7 +31,7 @@ func revive():
 	get_node("killTimer").start()
 	var pos = G.get_player().get_pos() + Vector2(rand_range(1, 2), 0).rotated(rand_range(-PI/4, PI/4)) * G.get_screen_width()
 	set_pos(pos)
-	get_node("AnimatedSprite").show()
+	get_node("Sprite").show()
 
 	if G.tutorial:
 		get_node("tutorialAnimation").play("tutorial")
@@ -43,7 +43,7 @@ func revive():
 func kill():
 	get_node("Particles2D").set_emitting(true)
 	dead = true
-	get_node("AnimatedSprite").hide()
+	get_node("Sprite").hide()
 	get_node("tutorialAnimation").stop_all()
 	get_node("instructions").hide()
 

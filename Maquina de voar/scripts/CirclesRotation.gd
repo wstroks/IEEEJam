@@ -1,6 +1,6 @@
 extends Node2D
 
-export var rot_speed = 75
+export var rot_speed = 40
 onready var circle_entity = get_node(".")
 
 func _ready():
