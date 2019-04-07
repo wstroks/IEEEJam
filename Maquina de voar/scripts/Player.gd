@@ -16,6 +16,7 @@ var currentColor = ""
 var cont = 0
 onready var PlayerSprite = get_node("Sprite")
 onready var Player = get_node(".")
+var last_collider = "aaaa"
 
 func _ready():
 	set_fixed_process(true)
@@ -53,14 +54,19 @@ func _on_Collision( collider ):
 	if collider.get("Tag") == "ColorSwitcher":
 		
 		setRandomColor()
-		
+	
+	elif(collider.get("Tag") == "ceu"):
+		get_tree().change_scene("res://museu/apresenta1.tscn")
 	
 	if collider.get("Tag") == currentColor:
+		
+		
 		
 		pass
 		
 		
-			
+		
+		
 	elif collider.get("Tag") != currentColor and collider.get("Tag") != "ColorSwitcher":
 		Die()
 

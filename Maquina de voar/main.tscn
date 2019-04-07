@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://fonts/main-text.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://plane.tscn" type="PackedScene" id=3]
+[ext_resource path="res://telaInicial/sprites/btn-voltar.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -111,7 +112,7 @@ margin/top = 37.0
 margin/right = -47.0
 margin/bottom = 12.0
 custom_fonts/font = ExtResource( 2 )
-text = "Continue?"
+text = "Deseja Continuar?"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -211,7 +212,7 @@ drag_margin/bottom = 0.2
 [node name="player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 335, 168 )
-MAX_FUEL = 20
+MAX_FUEL = 1
 fuel = 0
 be_quiet = false
 
@@ -260,6 +261,23 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
+[node name="voltar" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 504.0
+margin/top = -30.0
+margin/right = 615.0
+margin/bottom = 77.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
 [connection signal="pressed" from="ui/gameover/Button" to="." method="continue_game"]
 
 [connection signal="pressed" from="ui/gameover/Button1" to="." method="quit_game"]
@@ -267,5 +285,7 @@ autoplay = ""
 [connection signal="timeout" from="cloudTimer" to="." method="create_cloud"]
 
 [connection signal="timeout" from="gasTimer" to="." method="create_gas"]
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 
 

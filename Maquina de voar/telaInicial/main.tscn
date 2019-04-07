@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://telaInicial/main.gd" type="Script" id=1]
 [ext_resource path="res://telaInicial/sprites/menu-main.png" type="Texture" id=2]
 [ext_resource path="res://telaInicial/sprites/btn-jogar.png" type="Texture" id=3]
-[ext_resource path="res://telaInicial/sprites/btn-sairr.png" type="Texture" id=4]
+[ext_resource path="res://telaInicial/sprites/btn-jogar-hover.png" type="Texture" id=4]
+[ext_resource path="res://telaInicial/sprites/btn-sairr.png" type="Texture" id=5]
+[ext_resource path="res://telaInicial/sprites/btn-sair-hover.png" type="Texture" id=6]
 
 [node name="EventPlayer" type="EventPlayer"]
 
@@ -63,6 +65,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 3 )
+textures/hover = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -79,7 +82,8 @@ margin/bottom = 573.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 4 )
+textures/normal = ExtResource( 5 )
+textures/hover = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
 

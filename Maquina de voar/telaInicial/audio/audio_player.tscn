@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://telaInicial/audio/audio_player.gd" type="Script" id=1]
 [ext_resource path="res://telaInicial/audio/Click.wav" type="Sample" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://telaInicial/audio/genius2.wav" type="Sample" id=5]
 [ext_resource path="res://telaInicial/audio/tema.wav" type="Sample" id=6]
 [ext_resource path="res://telaInicial/audio/venceu.wav" type="Sample" id=7]
+[ext_resource path="res://telaInicial/audio/tema_b.ogg" type="AudioStream" id=8]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -67,5 +68,16 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 8 )
+stream/play = true
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

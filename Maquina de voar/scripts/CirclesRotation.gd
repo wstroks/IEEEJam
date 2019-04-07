@@ -8,3 +8,13 @@ func _ready():
 
 func _fixed_process(delta):
 	circle_entity.rotate(deg2rad(rot_speed * delta))
+
+func _on_voltar_pressed():
+	get_tree().change_scene("res://museu/apresenta1.tscn")
+	
+	pass # replace with function body
+
+
+func _on_voltar1_pressed():
+	get_tree().change_scene("res://museu/apresenta1.tscn")
+	pass # replace with function body

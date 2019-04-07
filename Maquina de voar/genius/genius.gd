@@ -143,3 +143,8 @@ func certo():
 	
 	
 	
+
+
+func _on_voltar_pressed():
+	get_tree().change_scene("res://museu/apresenta1.tscn")
+	pass # replace with function body

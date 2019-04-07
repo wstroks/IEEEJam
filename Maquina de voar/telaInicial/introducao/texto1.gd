@@ -5,7 +5,7 @@ var a= 1
 # var b = "textvar"
 var ALIGN_CENTER = 1
 var page=0
-var dialogo=["Há muito tempo atrás nasceu um homem em Florença. Até os 24 anos, era um homem comum, até entrar numa caverna misteriosa…","Dentro desta caverna, este homem encontrou extraterrestres que lhe dotaram de loucura e criatividade. Após este evento, este homem se tornou…","LEONARDO DA VINCI!!!!","Da Vinci deixou escritos em seu diário, porém as páginas que continham seus relatos da caverna foram… A-R-R-A-N-C-A-D-A-S! !!!!!!!!!","Uma tarde, o caderno com os escritos de Leonardo da Vinci caiu nos colos do jovem artista Julielson.","Ao se deparar com as páginas da transformação arrancadas, Julielson resolve ir ao museu da Vinci para solucionar o Mistério da Caverna."]
+var dialogo=["Há muito tempo atrás nasceu um homem em Florença. Até os 24 anos, era um homem comum, até entrar numa caverna misteriosa...","Dentro desta caverna, este homem encontrou extraterrestres que lhe dotaram de loucura e criatividade. Após este evento, este homem se tornou...","LEONARDO DA VINCI!!!!","Da Vinci deixou escritos em seu diário, porém as páginas que continham seus relatos da caverna foram... A-R-R-A-N-C-A-D-A-S! !!!!!!!!!","Uma tarde, o caderno com os escritos de Leonardo da Vinci caiu nos colos do jovem artista Julielson.","Ao se deparar com as páginas da transformação arrancadas, Julielson resolve ir ao museu da Vinci para solucionar o Mistério da Caverna."]
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here

@@ -160,6 +160,8 @@ params/anim_initial_pos = 0.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
+transform/pos = Vector2( -1.0254, 27.4339 )
+transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
 [connection signal="body_enter" from="Area2D" to="." method="collision_detected"]

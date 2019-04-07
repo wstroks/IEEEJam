@@ -10,6 +10,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_bbcode(dialogo[page])
+	get_node("../ceia").connect("pressed", self, "_on_ceia_pressed")
 	
 	ALIGN_CENTER=1
 
@@ -49,22 +50,31 @@ func _on_Timer_timeout():
 
 	pass # replace with function body
 
-
+func _on_ceia_pressed():
+	audio_player.play("Click") 
+	get_tree().change_scene("res://historias/santa.tscn")
 
 func _on_homem_pressed():
 	audio_player.play("Click")
-	get_tree().change_scene("res://scenes/Main.tscn")
+
+	get_tree().change_scene("res://historias/homem.tscn")
+	
+	#get_tree().change_scene("res://scenes/Main.tscn")
 	pass # replace with function body
 
 
 func _on_aviao_pressed():
 	audio_player.play("Click")
-	get_tree().change_scene("res://main.tscn")
+	
+	get_tree().change_scene("res://historias/aviao.tscn")
+	#get_tree().change_scene("res://main.tscn")
 	
 	pass # replace with function body
 
 
 func _on_genius_pressed():
 	audio_player.play("Click")
-	get_tree().change_scene("res://genius/genius.tscn")
+	
+	get_tree().change_scene("res://historias/genius.tscn")
+	#get_tree().change_scene("res://genius/genius.tscn")
 	pass # replace with function body

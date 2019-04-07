@@ -151,3 +151,8 @@ func create_gas():
 func quit_game():
 	OS.set_window_fullscreen(false)
 	get_tree().quit()
+
+
+func _on_voltar_pressed():
+	get_tree().change_scene("res://museu/apresenta1.tscn")
+	pass # replace with function body
